@@ -42,8 +42,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
    def configure_sign_up_params
-     devise_parameter_sanitizer.permit(:sign_up, keys: [:account_type])
+
    end
+
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
@@ -52,9 +53,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
    def after_sign_up_path_for(resource)
+
          if resource.account_type == "patient"
+           Patient.create!(:user_id =>resource.id)
           patient_index_url
          else
+          Doctor.create!(:user_id =>resource.id)
           doctor_index_url
      end
      end

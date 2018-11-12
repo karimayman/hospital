@@ -1,2 +1,13 @@
-<h1>Patient#index</h1>
-<p>Find me in app/views/patient/index.html.erb</p>
+<h1>account info </h1>
+<%=image_tag (current_user.img)%>
+</br>
+<%=current_user.account_type%>
+</br>
+<%=current_user.email%>
+</br>
+<%=current_user.encrypted_password%>
+</br>
+<%=current_user.patient.id%>
+</br>
+<%=current_user.id%>
+<h4>doctor's dealing with </h4>

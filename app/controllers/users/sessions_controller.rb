@@ -6,11 +6,12 @@ class Users::SessionsController < Devise::SessionsController
   # GET /resource/sign_in
   # def new
   #   super
-  # end
+  #end
 
   # POST /resource/sign_in
-  # def create
-  #   super
+   #def create
+    # super
+
   # end
 
   # DELETE /resource/sign_out
