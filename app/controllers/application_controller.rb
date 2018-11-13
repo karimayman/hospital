@@ -8,9 +8,9 @@ before_action :configure_permitted_parameters, if: :devise_controller?
         end
         def after_sign_in_path_for(resource)
           if current_user.account_type == "patient"
-            patient_index_url
+            patient_show_url
           else
-            doctor_index_url
+            doctor_show_url
           end
         end
 end

@@ -56,10 +56,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
          if resource.account_type == "patient"
            Patient.create!(:user_id =>resource.id)
-          patient_index_url
+          patient_show_url
          else
           Doctor.create!(:user_id =>resource.id)
-          doctor_index_url
+          doctor_show_url
      end
      end
   # The path used after sign up for inactive accounts.

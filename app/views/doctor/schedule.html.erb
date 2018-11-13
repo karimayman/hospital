@@ -1,0 +1,25 @@
+<%= form_for :@appointments_made do |f| %>
+<%=f.date_select (:day)%>
+<%=f.select :start_time, (0..23)%>
+<span>to:</span>
+<%=f.select :end_time,(0..23)%>
+</br>
+<%= f.submit "make the appointment"%>
+<% end %>
+
+<ul>
+<%@confirmed_appointments.each do|c|%>
+<%=c.day %>
+<%=c.start_time %>
+<%=c.end_time%>
+<%=c.patient_id%>
+<%end%>
+</ul>
+<ul>
+<%@unconfirmed_appointments.each do|n|%>
+<%=n.day %>
+<%=n.start_time %>
+<%=n.end_time%>
+<%=n.patient_id%>
+<%end%>
+</ul>
