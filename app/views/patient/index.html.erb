@@ -1,0 +1,5 @@
+<% @patients.each do |pat|%>
+<%=pat.inspect%>
+<%= link_to "show",patient_doctor_view_path(@params,:id => pat.id)%>
+<%end%>
+<%=current_user.id%>

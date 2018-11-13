@@ -1,0 +1,5 @@
+<% @doctors_available.each do |doc|%>
+<%=doc.id%>
+<%=doc.email%>
+<%= link_to "show",doctor_patient_view_path(@params,:id => doc.id)%> 
+<%end%>

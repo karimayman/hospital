@@ -9,5 +9,12 @@ class DoctorController < ApplicationController
     @unconfirmed_appointments = Appointment.where(confirmed: 'false' )
 
   end
+  def index
+    @doctors_available = User.where(account_type: 'doctor')
+
+  end
+  def patient_view
+    @doctor=  User.find(params[:id])
+  end
 
 end
